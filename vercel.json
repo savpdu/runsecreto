@@ -1,0 +1,6 @@
+{
+  "framework": null,
+  "installCommand": "unzip -oq mapa-dos-fornecedores-secreto.zip -x '.aistudio/*' && npm install --no-audit --no-fund",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
+}
