@@ -1,1 +1,8 @@
 const fs=require("fs");const p="src/components/SneakerImage.tsx";let s=fs.readFileSync(p,"utf8");s=s.replace("flex flex-wrap items-center justify-between gap-1.5 pt-0.5","flex flex-col gap-1.5 pt-0.5").replace("bg-[#BFFF00] text-[#0A0A0A] px-2.5 py-1 rounded-md font-mono tabular-nums text-xs sm:text-sm font-extrabold whitespace-nowrap","w-full bg-[#BFFF00] text-[#0A0A0A] px-2.5 py-1.5 rounded-md").replace("Fornecedor {supplierPrice}","<div className=\"font-mono text-xs sm:text-sm font-extrabold\">A partir de R$97</div><div className=\"text-[10px] sm:text-xs font-semibold leading-tight\">LINHA PREMIUM IMPORTADO</div>");if(!s.includes("LINHA PREMIUM IMPORTADO"))throw Error("Price patch failed");fs.writeFileSync(p,s);const app="src/App.tsx";let t=fs.readFileSync(app,"utf8");t=t.replace(", Fornecedor ${shoe.supplierPrice}", "").replace("Variação de cores e numerações disponível diretamente com os fornecedores.","Preços a partir de R$97 na seleção, sujeitos ao modelo e à disponibilidade. Consulte os fornecedores para cores e numerações.");fs.writeFileSync(app,t);
+// Replace Wistia video, loader and placeholder together.
+for (const file of ["index.html","src/index.css","src/App.tsx"]) {
+  const before=fs.readFileSync(file,"utf8");
+  const after=before.replaceAll("xnjwl3n805","x5t1oyh5pe");
+  if (!after.includes("x5t1oyh5pe")) throw Error("Missing Wistia video in "+file);
+  fs.writeFileSync(file,after);
+}
